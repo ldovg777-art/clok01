@@ -37,21 +37,6 @@
     "hidden": false
   },
   {
-    "id": "c6afcb9a79a54d5d",
-    "type": "ui_control",
-    "z": "f3c6e6f6b9a4d123",
-    "name": "Dashboard Events",
-    "events": "all",
-    "x": 140,
-    "y": 120,
-    "wires": [
-      [
-        "a725d0f4e0cda361",
-        "b8f34474dd1d4619"
-      ]
-    ]
-  },
-  {
     "id": "a725d0f4e0cda361",
     "type": "ui_template",
     "z": "f3c6e6f6b9a4d123",
@@ -202,7 +187,8 @@
     "wires": [
       [
         "e1ad26486aaeba76",
-        "c62b9e574da0438e"
+        "c62b9e574da0438e",
+        "b8f34474dd1d4619"
       ]
     ]
   },
