@@ -38,7 +38,7 @@
     },
     {
         "id": "c6afcb9a79a54d5d",
-        "type": "ui_ui_control",
+        "type": "ui_control",
         "z": "f3c6e6f6b9a4d123",
         "name": "Dashboard Events",
         "events": "all",
@@ -189,7 +189,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$flowContext('version') & ($flowContext('versionTime') ? ' ' & $flowContext('versionTime') : '')",
+                "to": "$flowContext(\"version\") & ($flowContext(\"versionTime\") ? \" \" & $flowContext(\"versionTime\") : \"\")",
                 "tot": "jsonata"
             }
         ],
