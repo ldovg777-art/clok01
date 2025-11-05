@@ -1,0 +1,472 @@
+[
+  {
+    "id": "f3c6e6f6b9a4d123",
+    "type": "tab",
+    "label": "Clock Dashboard",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "f20f7f2dabc03c49",
+    "type": "ui_tab",
+    "name": "Main",
+    "icon": "dashboard",
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "d0ecb2f691f64a9c",
+    "type": "ui_tab",
+    "name": "Версии",
+    "icon": "note",
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "b9e62a41f6a7e5d4",
+    "type": "ui_tab",
+    "name": "Календарь",
+    "icon": "date_range",
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "fa71b6d8bf8a3b62",
+    "type": "ui_group",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Clock",
+    "tab": "f20f7f2dabc03c49",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "a95f6bd95712e3cf",
+    "type": "ui_group",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "System",
+    "tab": "f20f7f2dabc03c49",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "control_group_example",
+    "type": "ui_group",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "UI Control Examples",
+    "tab": "f20f7f2dabc03c49",
+    "order": 3,
+    "disp": true,
+    "width": "12",
+    "collapse": false
+  },
+  {
+    "id": "bbe5981b03bcbb10",
+    "type": "ui_ui_control",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Dashboard Control",
+    "events": "all",
+    "x": 140,
+    "y": 360,
+    "wires": [
+      [
+        "event_handler_function"
+      ]
+    ]
+  },
+  {
+    "id": "switch_to_main_tab",
+    "type": "inject",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Переключить на Main",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"tab\":\"Main\"}",
+    "payloadType": "json",
+    "x": 180,
+    "y": 480,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "switch_to_versions_tab",
+    "type": "inject",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Переключить на Версии",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"tab\":\"Версии\"}",
+    "payloadType": "json",
+    "x": 190,
+    "y": 520,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "switch_to_calendar_tab",
+    "type": "inject",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Переключить на Календарь",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"tab\":\"Календарь\"}",
+    "payloadType": "json",
+    "x": 200,
+    "y": 560,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "next_tab",
+    "type": "inject",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Следующая вкладка",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "+1",
+    "payloadType": "str",
+    "x": 200,
+    "y": 600,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "previous_tab",
+    "type": "inject",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Предыдущая вкладка",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "-1",
+    "payloadType": "str",
+    "x": 210,
+    "y": 640,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "refresh_current_tab",
+    "type": "inject",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Обновить текущую вкладку",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "str",
+    "x": 210,
+    "y": 680,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "hide_system_group",
+    "type": "inject",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Скрыть группу System",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"group\":{\"hide\":[\"Main_System\"]}}",
+    "payloadType": "json",
+    "x": 210,
+    "y": 720,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "show_system_group",
+    "type": "inject",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Показать группу System",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"group\":{\"show\":[\"Main_System\"]}}",
+    "payloadType": "json",
+    "x": 210,
+    "y": 760,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "focus_on_clock_group",
+    "type": "inject",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Фокус на группу Clock",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"group\":{\"focus\":true,\"show\":[\"Main_Clock\"]}}",
+    "payloadType": "json",
+    "x": 200,
+    "y": 800,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "disable_versions_tab",
+    "type": "inject",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Отключить вкладку Версии",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"tabs\":{\"disable\":[\"Версии\"]}}",
+    "payloadType": "json",
+    "x": 210,
+    "y": 840,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "enable_versions_tab",
+    "type": "inject",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Включить вкладку Версии",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"tabs\":{\"enable\":[\"Версии\"]}}",
+    "payloadType": "json",
+    "x": 210,
+    "y": 880,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "event_handler_function",
+    "type": "function",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Обработка событий UI Control",
+    "func": "// Обработка событий от ui_ui_control\nvar eventType = msg.payload; // connect, lost, change, group\nvar socketId = msg.socketid;\nvar socketIp = msg.socketip;\n\nswitch(eventType) {\n    case 'connect':\n        // Клиент подключился\n        node.status({ fill: 'green', shape: 'dot', text: 'Клиент подключен: ' + socketIp });\n        node.log('Новый клиент подключен. Socket ID: ' + socketId + ', IP: ' + socketIp);\n        \n        // Можно отправить начальные данные новому клиенту\n        msg.topic = 'client_connected';\n        msg.payload = {\n            socketId: socketId,\n            socketIp: socketIp,\n            timestamp: new Date().toISOString()\n        };\n        break;\n        \n    case 'lost':\n        // Клиент отключился\n        node.status({ fill: 'red', shape: 'ring', text: 'Клиент отключен: ' + socketIp });\n        node.log('Клиент отключен. Socket ID: ' + socketId + ', IP: ' + socketIp);\n        \n        msg.topic = 'client_disconnected';\n        msg.payload = {\n            socketId: socketId,\n            socketIp: socketIp,\n            timestamp: new Date().toISOString()\n        };\n        break;\n        \n    case 'change':\n        // Вкладка изменена\n        var tabNumber = msg.tab;\n        var tabName = msg.name;\n        node.status({ fill: 'blue', shape: 'dot', text: 'Вкладка: ' + tabName });\n        node.log('Вкладка изменена на: ' + tabName + ' (номер: ' + tabNumber + ')');\n        \n        msg.topic = 'tab_changed';\n        msg.payload = {\n            tabNumber: tabNumber,\n            tabName: tabName,\n            socketId: socketId,\n            timestamp: new Date().toISOString()\n        };\n        break;\n        \n    case 'group':\n        // Группа изменена (развернута/свернута)\n        var groupName = msg.group;\n        var isOpen = msg.open;\n        node.status({ fill: 'yellow', shape: 'dot', text: 'Группа: ' + groupName + ' (' + (isOpen ? 'открыта' : 'закрыта') + ')' });\n        node.log('Группа ' + groupName + ' ' + (isOpen ? 'открыта' : 'закрыта'));\n        \n        msg.topic = 'group_changed';\n        msg.payload = {\n            groupName: groupName,\n            isOpen: isOpen,\n            socketId: socketId,\n            timestamp: new Date().toISOString()\n        };\n        break;\n        \n    default:\n        node.warn('Неизвестный тип события: ' + eventType);\n        return null;\n}\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 390,
+    "y": 360,
+    "wires": [
+      [
+        "event_display"
+      ]
+    ]
+  },
+  {
+    "id": "event_display",
+    "type": "ui_text",
+    "z": "f3c6e6f6b9a4d123",
+    "group": "control_group_example",
+    "order": 1,
+    "width": 12,
+    "height": 2,
+    "name": "События UI Control",
+    "label": "Последнее событие",
+    "format": "<div style=\"padding: 8px;\">\n  <strong>Тип:</strong> {{msg.topic}}<br>\n  <strong>Время:</strong> {{msg.payload.timestamp || msg.timestamp}}<br>\n  <strong>Socket ID:</strong> {{msg.payload.socketId || msg.socketid}}<br>\n  <strong>IP:</strong> {{msg.payload.socketIp || msg.socketip}}<br>\n  <strong>Детали:</strong> {{JSON.stringify(msg.payload)}}\n</div>",
+    "layout": "row-spread",
+    "x": 640,
+    "y": 360,
+    "wires": []
+  },
+  {
+    "id": "auto_switch_tabs",
+    "type": "function",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Автопереключение вкладок",
+    "func": "// Автоматическое переключение между вкладками каждые 10 секунд\nvar tabs = ['Main', 'Версии', 'Календарь'];\nvar currentIndex = flow.get('currentTabIndex') || 0;\n\n// Переключаем на следующую вкладку\ncurrentIndex = (currentIndex + 1) % tabs.length;\nflow.set('currentTabIndex', currentIndex);\n\nmsg.payload = {\n    tab: tabs[currentIndex]\n};\n\nnode.status({ fill: 'green', shape: 'dot', text: 'Переключено на: ' + tabs[currentIndex] });\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 220,
+    "y": 920,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "auto_switch_inject",
+    "type": "inject",
+    "z": "f3c6e6f6b9a4d123",
+    "name": "Автопереключение (каждые 10 сек)",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "10",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 250,
+    "y": 960,
+    "wires": [
+      [
+        "auto_switch_tabs"
+      ]
+    ]
+  },
+  {
+    "id": "ui_control_template",
+    "type": "ui_template",
+    "z": "f3c6e6f6b9a4d123",
+    "group": "control_group_example",
+    "name": "UI Control Кнопки",
+    "order": 2,
+    "width": 12,
+    "height": 6,
+    "format": "<div style=\"padding: 16px;\">\n  <h3>Примеры управления Dashboard через UI Control</h3>\n  <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 16px;\">\n    <button class=\"ui-control-btn\" ng-click=\"send({payload: {tab: 'Main'}})\">Main</button>\n    <button class=\"ui-control-btn\" ng-click=\"send({payload: {tab: 'Версии'}})\">Версии</button>\n    <button class=\"ui-control-btn\" ng-click=\"send({payload: {tab: 'Календарь'}})\">Календарь</button>\n    <button class=\"ui-control-btn\" ng-click=\"send({payload: '+1'})\">Следующая</button>\n    <button class=\"ui-control-btn\" ng-click=\"send({payload: '-1'})\">Предыдущая</button>\n    <button class=\"ui-control-btn\" ng-click=\"send({payload: ''})\">Обновить</button>\n    <button class=\"ui-control-btn\" ng-click=\"send({payload: {group: {hide: ['Main_System']}}})\">Скрыть System</button>\n    <button class=\"ui-control-btn\" ng-click=\"send({payload: {group: {show: ['Main_System']}}})\">Показать System</button>\n    <button class=\"ui-control-btn\" ng-click=\"send({payload: {group: {focus: true, show: ['Main_Clock']}}})\">Фокус Clock</button>\n    <button class=\"ui-control-btn\" ng-click=\"send({payload: {tabs: {disable: ['Версии']}}})\">Отключить Версии</button>\n    <button class=\"ui-control-btn\" ng-click=\"send({payload: {tabs: {enable: ['Версии']}}})\">Включить Версии</button>\n  </div>\n</div>\n<style>\n  .ui-control-btn {\n    padding: 10px 16px;\n    background: #2196F3;\n    color: white;\n    border: none;\n    border-radius: 4px;\n    cursor: pointer;\n    font-size: 14px;\n    transition: background 0.2s;\n  }\n  .ui-control-btn:hover {\n    background: #1976D2;\n  }\n  .ui-control-btn:active {\n    background: #0D47A1;\n  }\n</style>",
+    "storeOutMessages": false,
+    "fwdInMessages": false,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "x": 700,
+    "y": 480,
+    "wires": [
+      [
+        "bbe5981b03bcbb10"
+      ]
+    ]
+  },
+  {
+    "id": "example_info",
+    "type": "ui_text",
+    "z": "f3c6e6f6b9a4d123",
+    "group": "control_group_example",
+    "order": 3,
+    "width": 12,
+    "height": 3,
+    "name": "Информация о UI Control",
+    "label": "Описание",
+    "format": "<div style=\"padding: 12px; background: #f5f5f5; border-radius: 4px;\">\n  <h4>UI Control Node - Примеры использования</h4>\n  <p><strong>Функции:</strong></p>\n  <ul>\n    <li>Переключение вкладок: <code>{\"tab\": \"имя_вкладки\"}</code> или <code>\"+1\"</code> / <code>\"-1\"</code></li>\n    <li>Обновление страницы: <code>\"\"</code> (пустая строка)</li>\n    <li>Управление группами: <code>{\"group\": {\"hide\": [\"группа\"], \"show\": [\"группа\"], \"focus\": true}}</code></li>\n    <li>Управление вкладками: <code>{\"tabs\": {\"hide\": \"вкладка\", \"disable\": [\"вкладка\"]}}</code></li>\n  </ul>\n  <p><strong>События:</strong> connect, lost, change, group</p>\n</div>",
+    "layout": "row-spread",
+    "x": 680,
+    "y": 620,
+    "wires": []
+  }
+]
